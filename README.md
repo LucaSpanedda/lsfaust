@@ -5,14 +5,19 @@ Customizing and installing faust. The process ensures that only the correspondin
 
 ## Steps to Customize Faust
 
+   ```bash
+   sudo mkdir -p /usr/local/src
+   cd /usr/local/src
+   ```
+
 1. **Clone the Faust repository:**
    ```bash
-   git clone https://github.com/LucaSpanedda/faust.git
+   sudo git clone https://github.com/LucaSpanedda/faust.git
    ```
 
 2. **Clone the custom repository (`lsfaust`):**
    ```bash
-   git clone https://github.com/LucaSpanedda/lsfaust.git
+   sudo git clone https://github.com/LucaSpanedda/lsfaust.git
    ```
 
 3. **Navigate into the `faust` directory:**
@@ -22,19 +27,27 @@ Customizing and installing faust. The process ensures that only the correspondin
 
 4. **Copy the custom files from `lsfaust` into `faust`, preserving the directory structure:**
    ```bash
-   cp -r ../lsfaust/* .
+   sudo cp -r ../lsfaust/* .
    ```
 
 5. **(Optional) Remove the `lsfaust` directory to clean up:**
    ```bash
-   rm -rf ../lsfaust
+   sudo rm -rf ../lsfaust
    ```
 
 6. **Confirm that the custom files have been correctly placed:**
    ```bash
+   git config --global --add safe.directory /usr/local/src/faust
    git status
    ```
 
+7. **Install Faust:**
+   ```bash
+   sudo git pull --recurse-submodules
+   sudo make 
+   sudo make install
+   ```
+   
 ## How It Works
 - The first repository (`faust`) contains the official Faust code.
 - The second repository (`lsfaust`) contains only the modified files that should replace the original ones.
