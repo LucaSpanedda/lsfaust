@@ -1,5 +1,4 @@
-# lsfaust
-# Automating Faust Repository customization and installation
+# lsfaust - Automating Faust Repository customization and installation
 
 Customizing and installing faust. The process ensures that only the corresponding files in `faust` folder are replaced before the installation, while keeping the overall structure intact.
 
