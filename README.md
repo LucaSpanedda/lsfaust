@@ -1,0 +1,2 @@
+# lsfaust
+Custom faust installation
